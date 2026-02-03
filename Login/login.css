@@ -1,0 +1,91 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo a fonte e o background da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilos para o quadrado */
+.quadrado {
+    display: flex;
+    width: 600px;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden; /* Garantir que o conteúdo não ultrapasse as bordas */
+}
+
+/* Lado esquerdo do quadrado (só com cor) */
+.lado-esquerdo {
+    width: 50%;  /* Metade do quadrado */
+    background-color: #3498db; /* Cor de fundo */
+}
+
+/* Lado direito do quadrado (onde ficam os campos) */
+.lado-direito {
+    width: 50%; /* Metade do quadrado */
+    background-color: #fff; /* Cor de fundo do lado direito */
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para o formulário */
+.login-form {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilo dos grupos de input (label + input) */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo do botão */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: #2980b9;
+}
