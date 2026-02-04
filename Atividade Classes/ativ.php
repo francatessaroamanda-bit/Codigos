@@ -1,97 +1,71 @@
 <?php
 
-class automovel{
+
+abstract class Automovel {
     public $modelo;
     public $ano;
-    public $cor;
 
-    function __construct(string $modelo, float $ano, string $cor){
+    public function __construct($modelo, $ano) {
         $this->modelo = $modelo;
         $this->ano = $ano;
-        $this->cor = $cor;
     }
 
-    function andar(){
-        
-        echo "{$this->modelo} está andando<br>";
-    }
-}
-
-
-$Carro = new automovel("Carro", 2022, "Prata");
-
-$Carro->andar();
-
-
-$Moto = new automovel("Moto", 2020, "Preto");
-
-$Moto->andar();
-
-$Onibus = new automovel("Onibus", 2021, "Branco");
-
-$Onibus->andar();
-
-
-
-class animal{
-    public $especie;
-    public $peso;
-       
-
-    function __construct(string $nome, float $peso)
-    {
-        $this->nome = $nome;
-        $this->peso = $peso;
-    }
-
-    function andar()
-    {
-        echo "{$this->nome} está andando<br>";
+    
+    public function Acelera() {
+        echo "{$this->modelo} está se movimentando<br>";
     }
 }
 
 
-$Cachorro = new animal("Cachorro", 12);
-
-$Cachorro->andar();
-
-
-$Hiena = new animal("Hiena", 50);
-
-$Hiena->andar();
-
-$Taturana = new animal("Taturana", 10);
-
-$Taturana->andar();
+class CarroEsportivo extends Automovel {
+    function Acelera() {
+        echo "{$this->modelo} acelerou rápido<br>";
+    }
+}
 
 
-class filme{
+abstract class Animal {
     public $nome;
-    public $ano;
-    public $genero;
 
-    function __construct(string $nome, float $ano, string $genero){
+    public function __construct($nome) {
         $this->nome = $nome;
-        $this->ano = $ano;
-        $this->genero = $genero;
     }
 
-    function andar(){
-        
-        echo "{$this->nome} está andando<br>";
+    
+    public function Barulho() {
+        echo "{$this->nome} está fazendo um som<br>";
     }
 }
 
 
-$Avatar = new filme("Avatar", 2009, "genero");
+class Cachorro extends Animal {
+    public function Barulho() {
+        echo "{$this->nome} está latindo<br>";
+    }
+}
 
-$Avatar->andar();
+
+class Filme {
+    public $nome;
+
+    public function __construct($nome) {
+        $this->nome = $nome;
+    }
+
+    
+    public function Assistir() {
+        echo "Assistindo {$this->nome}<br>";
+    }
+}
 
 
-$Carros = new filme("Carros", 2000, "genero");
+$carro = new CarroEsportivo("Ferrari", 2022);
+$carro->Acelera();
 
-$Carros->andar();
+$cachorro = new Cachorro("Mel");
+$cachorro->Barulho();
 
-$Rio = new filme("Rio", 2010, "genero");
+$filme = new Filme("Avatar");
+$filme->Assistir();
 
-$Rio->andar();
+?>
